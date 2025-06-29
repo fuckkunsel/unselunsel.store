@@ -1,0 +1,114 @@
+/* ========== Шапка ========== */
+.header {
+  background-color: var(--white);
+  color: var(--black);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.products,
+.auth-container,
+.admin-dashboard {
+  padding: 30px 0;
+  margin-top: 80px; /* Высота шапки + небольшой отступ */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between; /* Размещает логотип по центру, а действия — справа */
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.container-prod {
+  display: flex;
+  justify-content: space-between; /* Размещает логотип по центру, а действия — справа */
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 10px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center; /* Центрируем логотип */
+  align-items: center;
+}
+
+.logo {
+  display: block; /* Убедимся, что это блочный элемент */ /* Твой логотип */
+  margin: 0 auto; /* Центрируем по горизонтали */
+}
+
+.user-actions {
+  display: flex;
+  gap: 20px;
+}
+
+.user-actions a {
+  display: flex;
+  align-items: center;
+  color: var(--black);
+  transition: color 0.2s ease;
+}
+
+.user-actions a:hover {
+  color: var(--accent-color);
+}
+
+.user-actions i {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+/* ========== Темная тема ========== */
+[data-theme="dark"] {
+  background-color: var(--dark-main-bg);
+  color: var(--dark-white);
+}
+
+[data-theme="dark"] .header,
+[data-theme="dark"] .product-card,
+[data-theme="dark"] .auth-container,
+[data-theme="dark"] .footer {
+  background-color: var(--dark-gray-light);
+  color: var(--dark-white);
+}
+
+[data-theme="dark"] .user-actions a,
+[data-theme="dark"] .footer .social-links a {
+  color: var(--dark-white);
+}
+
+/* ========== Кнопка переключения темы ========== */
+#theme-toggle {
+  background-color: transparent;
+  color: var(--black);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+
+#theme-toggle:hover {
+  color: var(--accent-color);
+}
+
+#theme-icon {
+  transition: transform 0.3s ease;
+}
+
+[data-theme="dark"] #theme-icon {
+  transform: rotate(180deg); /* Показать солнце при темной теме */
+}
+
